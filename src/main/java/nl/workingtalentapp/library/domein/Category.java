@@ -14,7 +14,18 @@ public class Category {
 	
 	private String cat_name;
 	
+	private String cat_desc;
+	
 	private boolean main_category;
+	
+	public String getCat_desc() {
+		return cat_desc;
+	}
+
+	public void setCat_desc(String cat_desc) {
+		this.cat_desc = cat_desc;
+	}
+
 
 	public long getId() {
 		return id;
