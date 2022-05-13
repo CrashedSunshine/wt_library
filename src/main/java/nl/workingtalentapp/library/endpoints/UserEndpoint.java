@@ -16,7 +16,7 @@ import nl.workingtalentapp.library.domein.User;
 import nl.workingtalentapp.library.service.UserService;
 
 @RestController
-@CrossOrigin(origins="http://localhost:4200")
+@CrossOrigin(origins="*")
 @RequestMapping("/user")
 public class UserEndpoint {
 	
