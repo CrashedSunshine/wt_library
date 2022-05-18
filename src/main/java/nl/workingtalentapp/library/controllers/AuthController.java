@@ -62,8 +62,9 @@ public class AuthController {
     return ResponseEntity.ok(new JwtResponse(jwt,
                          userDetails.getId(), 
                          userDetails.getUsername(), 
-                         userDetails.getEmail(), 
-                         roles));
+                         userDetails.getEmail(),
+                         roles,
+                          userDetails.getUserRole()));
   }
 
   @PostMapping("/signup")
@@ -89,7 +90,8 @@ public class AuthController {
             signUpRequest.getPhoneNumber(),
             signUpRequest.getFunctie(),
             signUpRequest.getPhoto(),
-            signUpRequest.getLinkedinURL()
+            signUpRequest.getLinkedinURL(),
+            signUpRequest.getUserRole()
             );
 
     Set<String> strRoles = signUpRequest.getRole();

@@ -29,10 +29,11 @@ public class UserDetailsImpl implements UserDetails {
   private String functie;
   private String photo;
   private String linkedinURL;
+  private String userRole;
 
     private Collection<? extends GrantedAuthority> authorities;
 
-  public UserDetailsImpl(Long id, String name, String username, String email, String password, String phoneNumber, String functie, String photo, String linkedinURL,
+  public UserDetailsImpl(Long id, String name, String username, String email, String password, String phoneNumber, String functie, String photo, String linkedinURL, String userRole,
       Collection<? extends GrantedAuthority> authorities) {
     this.id = id;
     this.name = name;
@@ -44,6 +45,7 @@ public class UserDetailsImpl implements UserDetails {
     this.photo = photo;
     this.linkedinURL = linkedinURL;
     this.authorities = authorities;
+    this.userRole = userRole;
   }
 
   public static UserDetailsImpl build(User user) {
@@ -61,10 +63,22 @@ public class UserDetailsImpl implements UserDetails {
         user.getFunctie(),
         user.getPhoto(),
         user.getLinkedinURL(),
+        user.getUserRole(),
         authorities);
   }
 
+  public String getUserRole() {
+    return userRole;
+  }
+
+  public void setUserRole(String userRole) {
+    this.userRole = userRole;
+  }
+
   @Override
+
+
+
   public Collection<? extends GrantedAuthority> getAuthorities() {
     return authorities;
   }

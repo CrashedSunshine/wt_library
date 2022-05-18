@@ -18,6 +18,8 @@ public class SignupRequest {
 
   private Set<String> role;
 
+  private String userRole;
+
   @NotBlank
   @Size(min = 6, max = 40)
   private String password;
@@ -97,5 +99,13 @@ public class SignupRequest {
 
   public void setLinkedinURL(String linkedinURL) {
     this.linkedinURL = linkedinURL;
+  }
+
+  public String getUserRole() {
+    return userRole;
+  }
+
+  public void setUserRole(String userRole) {
+    this.userRole = userRole;
   }
 }

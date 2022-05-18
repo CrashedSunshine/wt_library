@@ -45,6 +45,7 @@ public class User {
 	private String functie;
 	private String photo;
 	private String linkedinURL;
+	private String userRole;
 	
 	@JsonIgnore
 	@OneToMany(mappedBy ="user")
@@ -52,7 +53,7 @@ public class User {
 	
 	public User() {}
 
-	public User(String name, String username, String email, String password, String phoneNumber, String functie, String photo, String linkedinURL) {
+	public User(String name, String username, String email, String password, String phoneNumber, String functie, String photo, String linkedinURL, String userRole) {
 		this.name = name;
 		this.username = username;
 		this.email = email;
@@ -61,6 +62,7 @@ public class User {
 		this.functie = functie;
 		this.photo = photo;
 		this.linkedinURL = linkedinURL;
+		this.userRole = userRole;
 	}
 
 	public Long getId() {
@@ -126,7 +128,15 @@ public class User {
 	public void setId(long id) {
 		this.id = id;
 	}
-	
+
+	public String getUserRole() {
+		return userRole;
+	}
+
+	public void setUserRole(String userRole) {
+		this.userRole = userRole;
+	}
+
 	public Set<StatusHistory> getStatusHistories() {
 		return statusHistories;
 	}
